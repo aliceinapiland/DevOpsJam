@@ -54,10 +54,6 @@ Sign up for a GitHub account here:
 
 ### Prerequisite 2
 
-Lab 1 of DevJam is complete
-
--or-
-
 Perform the following steps to deploy a sample proxy.
 
 -   Download the API Bundle to your local workstation from here:
