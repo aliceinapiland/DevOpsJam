@@ -80,9 +80,9 @@ Now that we have installed apigeetool, we are going to use it to
 interact with the org.
 
 **Step 1:** Get list of all the deployed proxies:
-
+```
 apigeetool listdeployments -u {username} -o {org-name} -e test
-
+```
 The above script will do the following:
 
 It will GET the list of all the proxies in a json format from the “test”
@@ -96,6 +96,7 @@ You will be prompted for password.
 
 Your response will be like this:
 
+```
 "oauth\_devjam2" Revision 1
 deployed
 environment = test
@@ -103,7 +104,7 @@ base path = /
 "weatherapi" Revision 1 deployed
 environment = test
 base path = /
-
+```
 Here you can see the details of each deployed proxy.
 
 **Step 2.** Deploy a node.js app
