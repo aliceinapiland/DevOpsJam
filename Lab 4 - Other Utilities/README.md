@@ -109,32 +109,6 @@ Enter details as shown in the picture
 This will create the apigee api proxy.
 
 
-###Deploy In Apigee from Git repo without any tools
-
-####Objectives
-
-There are many apigee tools available to deploy apiproxies and do life cycle management . However if you don’t want to install any tools locally there is a way to it . Say you have a github repo with all apiproxies created and you want to deploy them to edge , this tool comes handy
-
-####Usage
-
-* Click on the link below
-
-[*https://github.com/apigee/apigee-deploy-now*](https://github.com/apigee/apigee-deploy-now)
-
-* Click on Deploy To Apigee Button in the github. This will bring apage like this.
-    ![](.//media/image06.png)
-
-* Change the url in the top to your github repo and refresh the page
-
-[*https://deploynow.apigee.com/login-form/?repo=https://github.com/akoo1010/apigee-nock-mock-deploy-now.git&apiFolder=/&makeScript=make.sh*](https://deploynow.apigee.com/login-form/?repo=https://github.com/akoo1010/apigee-nock-mock-deploy-now.git&apiFolder=/&makeScript=make.sh)
-
-Change the
-[*https://github.com/akoo1010/apigee-nock-mock-deploy-now.gi*](https://deploynow.apigee.com/login-form/?repo=https://github.com/akoo1010/apigee-nock-mock-deploy-now.git&apiFolder=/&makeScript=make.sh)t
-to your git repository and refresh.
-
-Provide Edge Credentials and hit Deploy Now to deploy in edge
-
-
 ###ApigeeDM - Deploy multiple proxies from command line
 
 
