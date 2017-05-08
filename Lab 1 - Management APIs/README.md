@@ -165,34 +165,24 @@ Or you can use this API from here:
 
 **Request:** 
 ```
-curl -X GET --header "Authorization: Basic ABCDXYZ123="
-"https://api.enterprise.apigee.com/v1/organizations/{org_name}/environments/{env}/stats/?select=sum(message_count)&timeRange=03%2F01%2F2016%2000%3A00\~03%2F31%2F2016%2024%3A00"
+curl -X GET "https://api.enterprise.apigee.com/v1/organizations/demo32/environments/test/stats/?select=sum(message_count)&timeRange=05/01/2017%2000:00~05/05/2017%2023:59" -u ravindranv@google.com
 ```
 
 **Response:**
 ```
+Enter host password for user 'ravindranv@google.com':
 {
-"environments": [
-{
-"metrics": [
-{
-"name": "sum(message_count)",\
-"values": [
-"2706.0"
-]
-}
-],
-"name": "test"
-}
-],
-"metaData": {
-"errors": [],
-"notices": [
-"source pg:28413fc7-b6de-43a9-af35-fbd49f11516f",
-"Table used: pixvy.test.agg_api",
-"query served by:ff0ec974-421b-4801-9074-4f9d1ca81fe2"
-]
-}
+  "environments" : [ {
+    "metrics" : [ {
+      "name" : "sum(message_count)",
+      "values" : [ "18049.0" ]
+    } ],
+    "name" : "test"
+  } ],
+  "metaData" : {
+    "errors" : [ ],
+    "notices" : [ "query served by:7c9dc2e5-729b-4ce3-b729-ae2f457f22ea", "source pg:ruapdb02r.us-ea.4.apigee.com", "Table used: demo32.test.agg_api" ]
+  }
 }
 ```
 
