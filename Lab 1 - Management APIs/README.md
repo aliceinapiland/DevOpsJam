@@ -46,20 +46,26 @@ rules as set in the UI.
 
 **Request:** 
 ```
-curl -u {username} https://api.enterprise.apigee.com/v1/organizations/{org_name}/apis/hotelsapi
+curl -u {edge_user_email} https://api.enterprise.apigee.com/v1/organizations/{org_name}/apis/{api_proxy_name}
+```
+**Example Request:**
+```
+curl -u ravindranv@google.com https://api.enterprise.apigee.com/v1/organizations/demo32/apis/vr_employee_proxy
 ```
 
 **Response:**
 ```
+Enter host password for user 'ravindranv@google.com':
 {
-"metaData" : {
-"createdAt" : 1453737784596,
-"createdBy" : "sarthak@apigee.com",
-"lastModifiedAt" : 1453737784596,
-"lastModifiedBy" : "sarthak@apigee.com"
-},
-"name" : "hotels",
-"revision" : [ "1" ]
+  "metaData" : {
+    "createdAt" : 1493722732980,
+    "createdBy" : "ravindranv@google.com",
+    "lastModifiedAt" : 1493810683513,
+    "lastModifiedBy" : "ravindranv@google.com",
+    "subType" : "Proxy"
+  },
+  "name" : "vr_employee_proxy",
+  "revision" : [ "1", "2" ]
 }
 ```
 
@@ -70,38 +76,52 @@ You can also try out the APIs here:
 
 **Request:** 
 ```
-curl -u {username} https://api.enterprise.apigee.com/v1/organizations/{org}/e/{env}
+curl -u {edge_user_email} https://api.enterprise.apigee.com/v1/organizations/{org}/e/{env}
+```
+**Example Request:**
+```
+curl -u ravindranv@google.com https://api.enterprise.apigee.com/v1/organizations/demo32/e/test
 ```
 
 **Response:**
 ```
+Enter host password for user 'ravindranv@google.com':
 {
-"createdAt" : 1428636004646,
-"createdBy" : "noreply_admin@apigee.com",
-"lastModifiedAt" : 1428636004646,
-"lastModifiedBy" : "noreply_admin@apigee.com",
-"name" : "test",
-"properties" : {
-"property" : [ {
-"name" : "useSampling",
-"value" : "100"
-}, {
-"name" : "samplingThreshold",
-"value" : "100000"
-}, {
-"name" : "samplingTables",
-"value" : "1=one;"
-}, {
-"name" : "samplingAlgo",
-"value" : "reservoir_sampler"
-}, {
-"name" : "samplingInterval",
-"value" : "300000"
-}, {
-"name" : "aggregationinterval",
-"value" : "300000"
-}]
-}
+  "createdAt" : 1381001690025,
+  "createdBy" : "lyeo@apigee.com",
+  "lastModifiedAt" : 1464341431388,
+  "lastModifiedBy" : "sanjoy@apigee.com",
+  "name" : "test",
+  "properties" : {
+    "property" : [ {
+      "name" : "uapEnabled",
+      "value" : "true"
+    }, {
+      "name" : "samplingTables",
+      "value" : "10=ten;1=one;"
+    }, {
+      "name" : "samplingInterval",
+      "value" : "300000"
+    }, {
+      "name" : "offlineQueryEnabled",
+      "value" : "true"
+    }, {
+      "name" : "aggregationinterval",
+      "value" : "300000"
+    }, {
+      "name" : "factquery_spark_enabled",
+      "value" : "true"
+    }, {
+      "name" : "useSampling",
+      "value" : "100"
+    }, {
+      "name" : "samplingAlgo",
+      "value" : "reservoir_sampler"
+    }, {
+      "name" : "samplingThreshold",
+      "value" : "100000"
+    } ]
+  }
 }
 ```
 
@@ -116,26 +136,27 @@ of your portals or internal systems.
 
 **Request:** 
 ```
-curl -X POST --header "Content-Type: application/json" --header "Authorization: Basic abcdxyz==" -d '{
-"email" : "goose_ipa@gmail.com",
-"firstName" : "goose",
-"lastName" : "IPA",
-"userName" : "gooseipa",
-"attributes" : [
-{
-"name" : "telephone",
-"value" : "9179326040"
-},
-{
-"name" : "city",
-"value" : "nyc"
-}
-]
-}'
+curl -X POST "https://api.enterpris.apigee.com/v1/organizations/demo32/developers" -H "Content-Type:application/json" -u ravindranv@google.com -d '{"email":"ravindranv+test@google.com","firstName":"Vidya","lastName":"Ravindran","userName":"VidyaTest","attribute":[{"name":"cellphone","value":"4156963692"},{"name":"city","value":"Austin"}]}'
 ```
-
-
-[*https://api.enterprise.apigee.com/v1/organizations/pixvy/developers*](https://api.enterprise.apigee.com/v1/organizations/pixvy/developers)
+**Response:**
+```
+Enter host password for user 'ravindranv@google.com':
+{
+  "apps" : [ ],
+  "email" : "ravindranv+test@google.com",
+  "developerId" : "iVXqpef4oS9YNxo7",
+  "firstName" : "Vidya",
+  "lastName" : "Ravindran",
+  "userName" : "VidyaTest",
+  "organizationName" : "demo32",
+  "status" : "active",
+  "attributes" : [ ],
+  "createdAt" : 1494224656310,
+  "createdBy" : "ravindranv@google.com",
+  "lastModifiedAt" : 1494224656310,
+  "lastModifiedBy" : "ravindranv@google.com"
+}
+```
 
 Or you can use this API from here:
 [*http://docs.apigee.com/management/apis/post/organizations/%7Borg\_name%7D/developers*](http://docs.apigee.com/management/apis/post/organizations/%7Borg_name%7D/developers)
