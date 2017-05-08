@@ -1,0 +1,44 @@
+{  
+   "configurations":[  
+      {  
+         "name":"test",
+         "policies":[  
+
+         ],
+         "proxies":[  
+
+         ],
+         "targets":[  
+            {  
+               "name":"default.xml",
+               "tokens":[  
+                  {  
+                     "xpath":"/TargetEndpoint/HTTPTargetConnection/URL",
+                     "value":"http://api.usergrid.com/{orgname}/sandbox/hotels"
+                  }
+               ]
+            }
+         ]
+      },
+      {  
+         "name":"prod",
+         "policies":[  
+
+         ],
+         "proxies":[  
+
+         ],
+         "targets":[  
+            {  
+               "name":"default.xml",
+               "tokens":[  
+                  {  
+                     "xpath":"/TargetEndpoint/HTTPTargetConnection/URL",
+                     "value":"https://api.usergrid.com/{organme}/sandbox/hotels"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}
